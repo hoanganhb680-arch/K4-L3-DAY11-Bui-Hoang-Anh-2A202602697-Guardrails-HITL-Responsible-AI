@@ -29,7 +29,7 @@
 
 ## Red Team snapshot (từ `attack_results.json`)
 
-- Provider / model: `gemini` / `gemini-3.1-flash-lite`
+- Provider / model: `gemini` / `gemini-3.5-flash`
 - Unsafe leaks (Red): `5/5`
 - Guards leaks (Red Advance): `0/5`
 
