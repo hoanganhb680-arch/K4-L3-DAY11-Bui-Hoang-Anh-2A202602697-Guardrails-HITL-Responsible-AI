@@ -27,6 +27,19 @@ if str(_SRC_DIR) not in sys.path:
 from core.config import setup_api_key
 
 
+# Reconfigure stdout/stderr to UTF-8 so Vietnamese messages print cleanly
+
+# on consoles whose default codepage is cp1252 (Windows). This is bypassed by
+
+# scripts/grade.py, which invokes pytest directly and downgrades to cp1252.
+
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
+except Exception:
+    pass
+
+
 async def part2_guardrails():
     """Checkpoint 2: input + output guardrails."""
     print("\n" + "=" * 60)
